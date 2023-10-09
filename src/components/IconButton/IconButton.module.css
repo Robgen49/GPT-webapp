@@ -1,0 +1,9 @@
+.iconButton{
+   border: none;
+   background: none;
+   padding: 10px;
+   border-radius: 50%;
+}
+.iconButton:active{
+   background-color: var(--secondary-color);
+}
