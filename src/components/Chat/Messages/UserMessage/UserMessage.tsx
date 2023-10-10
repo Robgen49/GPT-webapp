@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import cls from './UserMessage.module.css';
 
@@ -10,8 +9,11 @@ interface UserMessageProps {
 export const UserMessage = ({ className, text }: UserMessageProps) => {
 
    return (
-      <div className={classNames(className, cls.UserMessage)}>
-         {text}
+      <div className={cls.useMessageWrapper}>
+         <div className={cls.title}>You</div>
+         <div className={classNames(className, cls.userMessage)}>
+            <div>{text}</div>
+         </div>
       </div>
    );
 };

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import cls from './Button.module.css';
 import classNames from 'classnames';
 

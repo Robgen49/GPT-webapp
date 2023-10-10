@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import { UserMessage } from './UserMessage/UserMessage';
 import { BotMessage } from './BotMessage/BotMessage';
@@ -16,7 +15,7 @@ export const Messages = ({ userMessages, allMessages, className }: MessagesProps
       <div className={classNames(className, cls.messages)}>
          {
             allMessages.map((el, i) => (
-               userMessagesSet.has(el) ? <UserMessage text={el} /> : <BotMessage text={el} />
+               el.length > 0 ? (userMessagesSet.has(el) ? <UserMessage text={el} /> : <BotMessage text={el}/>) : <></>
             ))
          }
       </div>

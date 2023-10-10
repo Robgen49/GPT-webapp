@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import cls from './BotMessage.module.css';
 
@@ -9,8 +8,11 @@ interface BotMessageProps {
 
 export const BotMessage = ({ className, text }: BotMessageProps) => {
    return (
-      <div className={classNames(className, cls.BotMessage)}>
-         {text}
+      <div className={cls.botMessageWrapper}>
+         <div className={cls.title}>Bot</div>
+         <div className={classNames(className, cls.botMessage)}>
+            <div>{text}</div>
+         </div>
       </div>
    );
 };

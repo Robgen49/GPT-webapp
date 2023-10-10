@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import cls from './Input.module.css';
 import { TextareaHTMLAttributes } from 'react';

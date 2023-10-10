@@ -6,12 +6,13 @@ import cls from './IconButton.module.css';
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    className?: string;
    icon: string;
+   isActive?: boolean;
 }
 
-export const IconButton = ({ className, icon, ...otherProps }: IconButtonProps) => {
+export const IconButton = ({ className, icon, isActive, ...otherProps }: IconButtonProps) => {
    return (
       <>
-         <Button {...otherProps} className={classNames(className, cls.iconButton)} >
+         <Button {...otherProps} className={classNames(className, cls.iconButton, isActive ? cls.active : undefined)} >
             <img src={icon} alt="icon" />
          </Button>
       </>
