@@ -4,5 +4,8 @@
    }
 }
 .history{
-   width: 300px;
+   flex: 0 0 auto;
+   border: 1px solid black;
+   height: 100vh;
+   overflow-y: scroll;
 }

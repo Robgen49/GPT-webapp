@@ -16,6 +16,7 @@ export const Chat = ({ className }: ChatProps) => {
    const [res, setRes] = useState("");
    
    const [isSendButtonActive, setIsSendButtonActive] = useState(false);
+   const [isLoading, setIsLoading] = useState(false);
    const [userMessages, setUserMessages] = useState<string[]>([]);
    const [allMessages, setAllMessages] = useState<string[]>([]);
 
@@ -36,12 +37,15 @@ export const Chat = ({ className }: ChatProps) => {
    const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (req.length > 0) {
+         setIsLoading(true);
          setUserMessages(prevState => [...prevState, req])
          setAllMessages(prevState => [...prevState, req, ""])
+         setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 100);
          const request = req;
          setReq("")
          const response = await OpenAI(request);
          setRes(prevState => response.content ? response.content : "Произошла ошибка по неизвестным причинам")
+         setIsLoading(false);
       }
    }
    const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => setReq(event.target.value)
@@ -49,7 +53,7 @@ export const Chat = ({ className }: ChatProps) => {
    return (
          <div className={classNames(className, cls.chat)}>
             <Header title="ChatGPT" />
-            <Messages userMessages={userMessages} allMessages={allMessages} />
+            <Messages isLoading={isLoading} userMessages={userMessages} allMessages={allMessages} />
             <MessageInputField isSendButtonActive={isSendButtonActive} value={req} onChange={changeHandler} submitHandler={submitHandler} />
          </div>
    );

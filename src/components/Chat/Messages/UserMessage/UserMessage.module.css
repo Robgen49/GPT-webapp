@@ -2,6 +2,7 @@
    display: flex;
    justify-content: flex-end;
    padding: 5px;
+   animation: spawnMessage 1s linear normal;
 }
 .userMessage div{
    background-color: var(--secondary-color);
@@ -31,4 +32,12 @@
    font-size: 16px;
    font-weight: 600;
    letter-spacing: 1px;
+}
+@keyframes spawnMessage {
+   from{
+      opacity: 0;
+   }
+   to{
+      opacity: 1;
+   }
 }
