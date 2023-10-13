@@ -12,6 +12,15 @@
    font-size: 20px;
    font-weight: 400;
    line-height: 120%;
+   word-break: break-word;
+   white-space: break-spaces;
+   max-width: 70%;
+}
+@media (max-width:720px) {
+   .botMessage div{
+      font-size: calc(10px + 16 * (100vw / 1280));
+      max-width: 100%;
+   }
 }
 .botMessageWrapper{
    display: flex;

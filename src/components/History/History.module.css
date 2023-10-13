@@ -1,0 +1,8 @@
+@media (max-width:920px) {
+   .history{
+      display: none;
+   }
+}
+.history{
+   width: 300px;
+}

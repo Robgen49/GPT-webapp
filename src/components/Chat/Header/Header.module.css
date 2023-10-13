@@ -1,24 +1,26 @@
-.headerWrapper{
-   width: 100vw;
-   height: 70px;
-   border-bottom: 1px solid rgba(103, 103, 103, 0.195);
-   position: fixed;
+.header{
    display: flex;
+   flex: 0 0 70px;
    align-items: center;
    justify-content: space-between;
+   border-bottom: 1px solid rgba(103, 103, 103, 0.195);
    background-color: var(--primary-color);
+   position: sticky;
+   top: 0;
+   overflow: hidden;
 }
-.titleWrapper{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
+@media (min-width:920px){
+   .iconButton{
+      display: none;
+   }
 }
+
 .title{
    font-size: 24px;
    font-weight: 700;
 }
-.logoWrapper{
+
+.logo{
    animation: rotate 20s linear infinite;
 }
 @keyframes rotate {

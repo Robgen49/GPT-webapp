@@ -1,6 +1,6 @@
 .messages{
-   padding: 70px 5px;
-   flex: 1 1 auto;
+   padding: 0 5px;
+   flex-grow: 1;
    display: flex;
    flex-direction: column;
    justify-content: flex-end;

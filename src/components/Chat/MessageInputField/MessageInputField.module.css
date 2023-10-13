@@ -1,10 +1,11 @@
 .MessageInputField{
    display: flex;
    align-items: center;
-   flex: 0 0 auto;
+   flex: 0 0 70px;
    width: 100%;
    border-top: 1px solid rgba(103, 103, 103, 0.195);
-   position: fixed;
+   position: sticky;
    bottom: 0;
    background-color: var(--primary-color);
+   overflow: hidden;
 }

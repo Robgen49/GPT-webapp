@@ -1,7 +1,7 @@
-import { Chat } from "./components/Chat/Chat";
+import { MainPage } from "./pages/MainPage/MainPage";
 function App() {
   return (
-      <Chat />
+      <MainPage />
   );
 }
 

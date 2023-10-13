@@ -14,8 +14,8 @@ export const Messages = ({ userMessages, allMessages, className }: MessagesProps
    return (
       <div className={classNames(className, cls.messages)}>
          {
-            allMessages.map((el, i) => (
-               el.length > 0 ? (userMessagesSet.has(el) ? <UserMessage text={el} /> : <BotMessage text={el}/>) : <></>
+            allMessages.map(el => (
+               el.length > 0 ? (userMessagesSet.has(el) ? <UserMessage key={el} text={el} /> : <BotMessage key={el} text={el} />) : <></>
             ))
          }
       </div>

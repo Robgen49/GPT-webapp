@@ -11,11 +11,11 @@ interface HeaderProps {
 
 export const Header = ({ className, title }: HeaderProps) => {
    return (
-      <div className={classNames(className, cls.headerWrapper)}>
-         <IconButton icon={menuIcon} />
+      <div className={classNames(className, cls.header)}>
+         <IconButton className={cls.iconButton} icon={menuIcon} />
          <span className={cls.title}>{title}</span>
          <div className={cls.logoWrapper}>
-            <img src={logo} alt="ChatLogo" />
+            <img className={cls.logo} src={logo} alt="ChatLogo" />
          </div>
       </div>
    );

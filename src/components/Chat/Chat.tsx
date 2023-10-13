@@ -14,6 +14,7 @@ export const Chat = ({ className }: ChatProps) => {
 
    const [req, setReq] = useState("");
    const [res, setRes] = useState("");
+   
    const [isSendButtonActive, setIsSendButtonActive] = useState(false);
    const [userMessages, setUserMessages] = useState<string[]>([]);
    const [allMessages, setAllMessages] = useState<string[]>([]);
@@ -26,7 +27,7 @@ export const Chat = ({ className }: ChatProps) => {
    }, [req])
 
    useEffect(() => {
-      if (res.length > 0) {
+      if (res.length > 1) {
          setAllMessages(prevState => [...prevState, "", res])
          setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 100);
       }
@@ -39,19 +40,17 @@ export const Chat = ({ className }: ChatProps) => {
          setAllMessages(prevState => [...prevState, req, ""])
          const request = req;
          setReq("")
-         console.log(request)
          const response = await OpenAI(request);
-         console.log(response)
          setRes(prevState => response.content ? response.content : "Произошла ошибка по неизвестным причинам")
       }
    }
    const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => setReq(event.target.value)
 
    return (
-      <div className={classNames(className, cls.chat)}>
-         <Header title="ChatGPT" />
-         <Messages userMessages={userMessages} allMessages={allMessages} />
-         <MessageInputField isSendButtonActive={isSendButtonActive} value={req} onChange={changeHandler} submitHandler={submitHandler} />
-      </div>
+         <div className={classNames(className, cls.chat)}>
+            <Header title="ChatGPT" />
+            <Messages userMessages={userMessages} allMessages={allMessages} />
+            <MessageInputField isSendButtonActive={isSendButtonActive} value={req} onChange={changeHandler} submitHandler={submitHandler} />
+         </div>
    );
 };
