@@ -45,6 +45,7 @@ body {
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     background-color: var(--primary-color);
+    overflow: hidden;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -98,7 +99,7 @@ h6 {
 }
 
 :root{
-    --primary-color:rgb(24, 24, 24);
-    --secondary-color:#59595a;
+    --primary-color:rgb(31, 31, 31);
+    --secondary-color:#292929;
     --items-color:#b0b0b0;
 }

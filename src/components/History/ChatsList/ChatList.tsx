@@ -10,7 +10,7 @@ interface ChatListProps {
 export const ChatList = ({ className, chatList }: ChatListProps) => {
 
    return (
-      <div className={classNames(className, cls.ChatList)}>
+      <div className={classNames(className, cls.chatList)}>
          {chatList.map(el => <ChatItem title={el} />)}
       </div>
    );

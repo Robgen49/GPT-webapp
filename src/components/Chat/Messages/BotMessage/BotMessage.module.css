@@ -6,6 +6,7 @@
 }
 .botMessage div{
    background-color: var(--secondary-color);
+   color: #83dbe1;
    padding: 20px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
@@ -27,13 +28,7 @@
    display: flex;
    flex-direction: column;
 }
-.title{
-   display: flex;
-   justify-content: flex-start;
-   font-size: 16px;
-   font-weight: 600;
-   letter-spacing: 1px;
-}
+
 @keyframes spawnMessage {
    from{
       opacity: 0;

@@ -6,6 +6,12 @@
    border-top: 1px solid rgba(103, 103, 103, 0.195);
    position: sticky;
    bottom: 0;
-   background-color: var(--primary-color);
+   /* background-color: var(--primary-color); */
+   background-color: none;
    overflow: hidden;
+}
+@media (min-width: 1200px) {
+   .MessageInputField{
+      padding: 0 50px;
+   }
 }

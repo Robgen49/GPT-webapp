@@ -8,7 +8,7 @@ interface MainPageProps {
 }
 
 export const MainPage = ({ className }: MainPageProps) => {
-   const chatList = ['botOne', 'botTwo', 'botThree']
+   const chatList = ['botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree', 'botOne', 'botTwo', 'botThree',]
    return (
       <div className={cls.container}>
          <div className={classNames(className, cls.mainPage)}>

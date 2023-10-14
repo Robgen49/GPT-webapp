@@ -10,7 +10,6 @@ export const UserMessage = ({ className, text }: UserMessageProps) => {
 
    return (
       <div className={cls.useMessageWrapper}>
-         <div className={cls.title}>You</div>
          <div className={classNames(className, cls.userMessage)}>
             <div>{text}</div>
          </div>

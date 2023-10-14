@@ -13,6 +13,9 @@
    .iconButton{
       display: none;
    }
+   .header{
+      padding: 0 5px;
+   }
 }
 
 .title{
