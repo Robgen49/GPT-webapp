@@ -8,24 +8,24 @@ import cls from './Chat.module.css';
 
 interface ChatProps {
    className?: string;
+   chatName: string;
 }
 
-export const Chat = ({ className }: ChatProps) => {
+export const Chat = ({ className, chatName }: ChatProps) => {
 
    const [req, setReq] = useState("");
    const [res, setRes] = useState("");
-   
+
    const [isSendButtonActive, setIsSendButtonActive] = useState(false);
    const [isLoading, setIsLoading] = useState(false);
    const [userMessages, setUserMessages] = useState<string[]>([]);
    const [allMessages, setAllMessages] = useState<string[]>([]);
 
-   useEffect(() => {
-      if (req.length > 0) {
-         setIsSendButtonActive(true);
-      }
-      else setIsSendButtonActive(false);
-   }, [req])
+   useEffect(() => req.length > 0 ?
+      setIsSendButtonActive(true)
+      :
+      setIsSendButtonActive(false)
+      , [req])
 
    useEffect(() => {
       if (res.length > 1) {
@@ -48,13 +48,14 @@ export const Chat = ({ className }: ChatProps) => {
          setIsLoading(false);
       }
    }
+
    const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => setReq(event.target.value)
 
    return (
-         <div className={classNames(className, cls.chat)}>
-            <Header title="ChatGPT" />
-            <Messages isLoading={isLoading} userMessages={userMessages} allMessages={allMessages} />
-            <MessageInputField isSendButtonActive={isSendButtonActive} value={req} onChange={changeHandler} submitHandler={submitHandler} />
-         </div>
+      <div className={classNames(className, cls.chat)}>
+         <Header title={chatName} />
+         <Messages isLoading={isLoading} userMessages={userMessages} allMessages={allMessages} />
+         <MessageInputField isSendButtonActive={isSendButtonActive} value={req} onChange={changeHandler} submitHandler={submitHandler} />
+      </div>
    );
 };

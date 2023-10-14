@@ -11,7 +11,7 @@ export const ChatList = ({ className, chatList }: ChatListProps) => {
 
    return (
       <div className={classNames(className, cls.chatList)}>
-         {chatList.map(el => <ChatItem title={el} />)}
+         {chatList.map(el => <ChatItem lastMessage='it is a last message...' title={el} />)}
       </div>
    );
 };

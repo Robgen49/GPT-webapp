@@ -4,6 +4,9 @@
    justify-content: flex-end;
    overflow-y: scroll;
 }
+.messages::-webkit-scrollbar{
+   width: 10px;
+}
 @media (min-width:1200px) {
    .messages{
       padding: 20px 80px 0;

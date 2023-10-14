@@ -4,10 +4,11 @@
    padding: 5px;
    animation: spawnMessage 1s linear normal;
 }
-.botMessage div{
+.text{
    background-color: var(--secondary-color);
-   color: #83dbe1;
+   color: #cbf5f9;
    padding: 20px;
+   padding-bottom: 1px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
    border-bottom-right-radius: 20px;
@@ -17,9 +18,17 @@
    word-break: break-word;
    white-space: break-spaces;
    max-width: 70%;
+   position: relative;
+}
+.date{
+   bottom: 0;
+   right: 10px;
+   position: absolute;
+   color: #fafafa;
+   font-size: 12px;
 }
 @media (max-width:720px) {
-   .botMessage div{
+   .text{
       font-size: calc(10px + 16 * (100vw / 1280));
       max-width: 100%;
    }
